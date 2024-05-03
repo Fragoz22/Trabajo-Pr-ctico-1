@@ -176,15 +176,19 @@ else:
     if tipo == 6:
         tipo_envio = 'Carta Expresa'
         peso = (peso[6])
-    if pais_destino == (pais_destino[0]):
+    if pais_destino[0] in pais_destino:
         precio_porc = (int(precio[0]) + (int(precio[0]) * 20)) / 100
-    if pais_destino == (pais_destino[1]):
+    if pais_destino[1] in pais_destino:
         precio_porc = (int(precio[1]) + (int(precio[1]) * 25)) / 100
-    if pais_destino == (pais_destino[2]):
+    if pais_destino[2] in pais_destino:
         precio_porc = (int(precio[2]) + (int(precio[2]) * 20)) / 100
-    if pais_destino == (pais_destino[3]):
+    if pais_destino[3] in pais_destino:
         precio_porc = (int(precio[3]) + (int(precio[3]) * 25)) / 100
-    if pais_destino == (pais_destino[4]):
+    if pais_destino[4] in pais_destino:
         precio_porc = (int(precio[4]) + (int(precio[4]) * 30)) / 100
-    if pais_destino == (pais_destino[5]):
+    if pais_destino[5] in pais_destino:
         precio_porc = (int(precio[5]) + (int(precio[5]) * 50)) / 100
+
+print(peso)
+print(tipo_envio)
+print(precio_porc)
