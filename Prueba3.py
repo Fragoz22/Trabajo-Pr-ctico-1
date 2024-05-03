@@ -64,15 +64,16 @@ else:
                     if len(cp) == 9:
                         if (cp[0] in reales and cp[1] in reales and cp[2] in reales and cp[3] in reales and cp[4] in
                                 reales and cp[5] in reales and cp[6] in reales and cp[7] in reales and cp[8] in reales):
-                            cp = "Brasil"
                             provincia = "No Aplica"
                             if cp[0] == "8" or cp[0] == 9:
                                 region_Brasil = "a"
+                                cp = "Brasil"
                             elif cp[0] == "0" or cp[0] == "1" or cp[0] == "2" or cp[0] == "3":
                                 region_Brasil = "b"
+                                cp = "Brasil"
                             elif cp[0] == "4" or cp[0] == "5" or cp[0] == "6" or cp[0] == "7":
                                 region_Brasil = "c"
-
+                                cp = "Brasil"
                         else:
                             cp = "Otros países"
                             provincia = "No Aplica"
@@ -138,3 +139,4 @@ else:
                                 cp = "Otros países"
                         else:
                             provincia = "No aplica"
+
