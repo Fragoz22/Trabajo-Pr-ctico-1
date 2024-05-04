@@ -1,0 +1,324 @@
+# Inicio de TP 1
+
+
+# CARGA DE DATOS
+pais_destino1 = 'a'
+cp = input("Ingrese el código postal del lugar de destino: ")
+ban = True
+reales = ("0", "1", "2", "3", "4", "5", "6", "7", "8", "9")
+provincia = ("Salta", "Provincia de Buenos Aires", "Ciudad Autónoma de Buenos Aires", "San Luis", "Entre Ríos",
+             "La Rioja", "Santiago del Estero", "Chaco", "San Juan", "Catamarca", "La Pampa", "Mendoza", "Misiones",
+             "Formosa", "Neuquén", "Río Negro", "Santa Fe", "Tucumán", "Chubut", "Tierra del Fuego", "Corrientes",
+             "Córdoba", "Jujuy", "Santa Cruz")
+
+# PROCESOS PARA IDENTIFICAR EL CODIGO POSTAL
+if len(cp) > 9 or len(cp) < 4:
+    ban = False
+    if ban == False:
+        cp = "Otro"
+        provincia = "No Aplica"
+        pais_destino1 = "Otro"
+
+else:
+
+    if len(cp) == 4:
+        if cp[0] in reales and cp[1] in reales and cp[2] in reales and cp[3] in reales:
+            cp = "Bolivia"
+            pais_destino1 = "Bolivia"
+            provincia = "No aplica"
+        else:
+            cp = "Otro"
+            provincia = "No aplica"
+            pais_destino1 = 'Otro'
+    else:
+        if len(cp) == 5:
+            if cp[0] in reales and cp[1] in reales and cp[2] in reales and cp[3] in reales and cp[4] in reales:
+
+                if cp[0] == "1":
+                    pais_destino1 = "Uruguay(Montevideo)"
+                    cp = "Uruguay"
+                    provincia = "No aplica"
+                else:
+                    cp = "Uruguay"
+                    pais_destino1 = "Uruguay(No Montevideo)"
+                    provincia = "No aplica"
+            else:
+                cp = "Otro"
+                provincia = "No aplica"
+                pais_destino1 = 'Otro'
+        else:
+            if len(cp) == 6:
+                if (cp[0] in reales and cp[1] in reales and cp[2] in reales and cp[3] in reales and cp[4] in
+                        reales and cp[5] in reales):
+                    cp = "Paraguay"
+                    provincia = "No aplica"
+                    pais_destino1 = 'Paraguay'
+                else:
+                    cp = "Otro"
+                    provincia = "No aplica"
+                    pais_destino1 = 'Otro'
+            else:
+                if len(cp) != 6 and len(cp) == 7:
+                    if (cp[0] in reales and cp[1] in reales and cp[2] in reales and cp[3] in reales and cp[4] in
+                            reales and cp[5] in reales and cp[6] in reales):
+                        cp = "Chile"
+                        provincia = "No aplica"
+                        pais_destino1 = 'Chile'
+                    else:
+                        cp = "Otro"
+                        provincia = "No aplica"
+                        pais_destino1 = 'Otro'
+                else:
+                    if len(cp) == 9:
+                        if (cp[0] in reales and cp[1] in reales and cp[2] in reales and cp[3] in reales and cp[4] in
+                                reales and cp[5] == "-" and cp[6] in reales and cp[7] in reales and cp[8] in reales):
+
+                            if cp[0] == "8" or cp[0] == "9":
+                                cp = "Brasil"
+                                pais_destino1 = 'Brasil 1'
+                                provincia = "No aplica"
+                            elif cp[0] == "0" or cp[0] == "1" or cp[0] == "2" or cp[0] == "3":
+                                cp = "Brasil"
+                                pais_destino1 = 'Brasil 2'
+                                provincia = "No aplica"
+                            elif cp[0] == "4" or cp[0] == "5" or cp[0] == "6" or cp[0] == "7":
+                                cp = "Brasil"
+                                pais_destino1 = 'Brasil 3'
+                                provincia = "No aplica"
+                        else:
+                            cp = "Otro"
+                            provincia = "No aplica"
+                            pais_destino1 = 'Otro'
+                    else:
+                        if len(cp) == 8 and (cp[0] not in reales and cp[0] != "I" and cp[0] != "O" and cp[7] not in
+                                             reales and cp[6] not in reales and cp[5] not in reales and cp[1] in
+                                             reales and cp[2] in reales and cp[3] in reales and cp[4] in reales):
+
+                            if cp[0] == "A":
+                                provincia = (provincia[0])
+                            elif cp[0] == "B":
+                                provincia = (provincia[1])
+                            elif cp[0] == "C":
+                                provincia = (provincia[2])
+                            elif cp[0] == "D":
+                                provincia = (provincia[3])
+                            elif cp[0] == "E":
+                                provincia = (provincia[4])
+                            elif cp[0] == "F":
+                                provincia = (provincia[5])
+                            elif cp[0] == "G":
+                                provincia = (provincia[6])
+                            elif cp[0] == "H":
+                                provincia = (provincia[7])
+                            elif cp[0] == "J":
+                                provincia = (provincia[8])
+                            elif cp[0] == "K":
+                                provincia = (provincia[9])
+                            elif cp[0] == "L":
+                                provincia = (provincia[10])
+                            elif cp[0] == "M":
+                                provincia = (provincia[11])
+                            elif cp[0] == "N":
+                                provincia = (provincia[12])
+                            elif cp[0] == "P":
+                                provincia = (provincia[13])
+                            elif cp[0] == "Q":
+                                provincia = (provincia[14])
+                            elif cp[0] == "R":
+                                provincia = (provincia[15])
+                            elif cp[0] == "S":
+                                provincia = (provincia[16])
+                            elif cp[0] == "T":
+                                provincia = (provincia[17])
+                            elif cp[0] == "U":
+                                provincia = (provincia[18])
+                            elif cp[0] == "V":
+                                provincia = (provincia[19])
+                            elif cp[0] == "W":
+                                provincia = (provincia[20])
+                            elif cp[0] == "X":
+                                provincia = (provincia[21])
+                            elif cp[0] == "Y":
+                                provincia = (provincia[22])
+                            elif cp[0] == "Z":
+                                provincia = (provincia[23])
+
+                            if (cp[0] not in reales and cp[7] not in reales and
+                                    cp[6] not in reales and cp[5] not in reales and cp[1] in reales and cp[2] in
+                                    reales and cp[3] in reales and cp[4] in reales):
+                                cp = "Argentina"
+                                pais_destino1 = 'provincia argentina'
+                            else:
+                                provincia = "No aplica"
+                        else:
+                            provincia = "No aplica"
+                            cp = "Otro"
+                            pais_destino1 = "Otro"
+
+# CARGA DE DATOS DE DIRECCION Y ENVIO
+direccion = input("Dirección del lugar de destino: ")
+
+# ASIGNACION DE TUPLAS/VARIABLES
+tipo = int(input("Tipo de envío: "))
+tipo_envio = ('Carta Simple', 'Carta Certificada', 'Carta Expresa')
+peso = ('p < 20', '20 <= p < 150 ', '150 <= p < 500', 'p < 150', '150 <= p < 500', 'p < 150', '150 <= p < 500')
+precio = (1100, 1800, 2450, 8300, 10900, 14300, 17900)
+pais_destino = ('Bolivia', 'Paraguay', 'Uruguay (Montevideo)', 'Chile', 'Uruguay (no Montevideo)', 'a', 'b', 'c',
+                'Otro')
+importe1 = 0
+importe = 0
+
+# PROCESOS PARA IDENTIFICAR/CALCULAR EL TIPO DE ENVIO
+if cp == 'Argentina':
+    if tipo == 0:
+        tipo_envio = 'Carta simple'
+        peso = (peso[0])
+        importe1 = (precio[0])
+    elif tipo == 1:
+        tipo_envio = 'Carta simple'
+        peso = (peso[1])
+        importe1 = (precio[1])
+    elif tipo == 2:
+        tipo_envio = 'Carta simple'
+        peso = (peso[2])
+        importe1 = (precio[2])
+    elif tipo == 3:
+        tipo_envio = 'Carta certificada'
+        peso = (peso[3])
+        importe1 = (precio[3])
+    elif tipo == 4:
+        tipo_envio = 'Carta certificada'
+        peso = (peso[4])
+        importe1 = (precio[4])
+    elif tipo == 5:
+        tipo_envio = 'Carta Expresa'
+        peso = (peso[5])
+        importe1 = (precio[5])
+    elif tipo == 6:
+        tipo_envio = 'Carta Expresa'
+        peso = (peso[6])
+        importe1 = (precio[6])
+else:
+    if tipo == 0:
+        tipo_envio = 'Carta simple'
+        peso = (peso[0])
+        if (pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)" or
+                pais_destino1 == 'Brasil 1'):
+            importe1 = (int(precio[0]) + (int(precio[0]) * 20) / 100)
+        else:
+            if pais_destino1 == 'Chile' or pais_destino1 == 'Uruguay(No Montevideo)' or pais_destino1 == 'Brasil 2':
+                importe1 = (int(precio[0]) + (int(precio[0]) * 25) / 100)
+            else:
+                if pais_destino1 == 'Brasil 3':
+                    importe1 = (int(precio[0]) + (int(precio[0]) * 30) / 100)
+                else:
+                    if pais_destino1 == 'Otro':
+                        importe1 = (int(precio[0]) + (int(precio[0]) * 50) / 100)
+    if tipo == 1:
+        tipo_envio = 'Carta simple'
+        peso = (peso[1])
+        if (pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)" or
+                pais_destino1 == 'Brasil 1'):
+            importe1 = (int(precio[1]) + (int(precio[1]) * 20) / 100)
+        else:
+            if pais_destino1 == 'Chile' or pais_destino1 == 'Uruguay(No Montevideo)' or pais_destino1 == 'Brasil 2':
+                importe1 = (int(precio[1]) + (int(precio[1]) * 25) / 100)
+            else:
+                if pais_destino1 == 'Brasil 3':
+                    importe1 = (int(precio[1]) + (int(precio[1]) * 30) / 100)
+                else:
+                    if pais_destino1 == 'Otro':
+                        importe1 = (int(precio[1]) + (int(precio[1]) * 50) / 100)
+    if tipo == 2:
+        tipo_envio = 'Carta simple'
+        peso = (peso[2])
+        if (pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)" or
+                pais_destino1 == 'Brasil 1'):
+            importe1 = (int(precio[2]) + (int(precio[2]) * 20) / 100)
+        else:
+            if pais_destino1 == 'Chile' or pais_destino1 == 'Uruguay(No Montevideo)' or pais_destino1 == 'Brasil 2':
+                importe1 = (int(precio[2]) + (int(precio[2]) * 25) / 100)
+            else:
+                if pais_destino1 == 'Brasil 3':
+                    importe1 = (int(precio[2]) + (int(precio[2]) * 30) / 100)
+                else:
+                    if pais_destino1 == 'Otro':
+                        importe1 = (int(precio[2]) + (int(precio[2]) * 50) / 100)
+    if tipo == 3:
+        tipo_envio = 'Carta certificada'
+        peso = (peso[0])
+        if (pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)" or
+                pais_destino1 == 'Brasil 1'):
+            importe1 = (int(precio[3]) + (int(precio[3]) * 20) / 100)
+        else:
+            if pais_destino1 == 'Chile' or pais_destino1 == 'Uruguay(No Montevideo)' or pais_destino1 == 'Brasil 2':
+                importe1 = (int(precio[3]) + (int(precio[3]) * 25) / 100)
+            else:
+                if pais_destino1 == 'Brasil 3':
+                    importe1 = (int(precio[3]) + (int(precio[3]) * 30) / 100)
+                else:
+                    if pais_destino1 == 'Otro':
+                        importe1 = (int(precio[3]) + (int(precio[3]) * 50) / 100)
+    if tipo == 4:
+        tipo_envio = 'Carta certificada'
+        peso = (peso[0])
+        if (pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)" or
+                pais_destino1 == 'Brasil 1'):
+            importe1 = (int(precio[4]) + (int(precio[4]) * 20) / 100)
+        else:
+            if pais_destino1 == 'Chile' or pais_destino1 == 'Uruguay(No Montevideo)' or pais_destino1 == 'Brasil 2':
+                importe1 = (int(precio[4]) + (int(precio[4]) * 25) / 100)
+            else:
+                if pais_destino1 == 'Brasil 3':
+                    importe1 = (int(precio[4]) + (int(precio[4]) * 30) / 100)
+                else:
+                    if pais_destino1 == 'Otro':
+                        importe1 = (int(precio[4]) + (int(precio[4]) * 50) / 100)
+    if tipo == 5:
+        tipo_envio = 'Carta expresa'
+        peso = (peso[0])
+        if (pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)" or
+                pais_destino1 == 'Brasil 1'):
+            importe1 = (int(precio[5]) + (int(precio[5]) * 20) / 100)
+        else:
+            if pais_destino1 == 'Chile' or pais_destino1 == 'Uruguay(No Montevideo)' or pais_destino1 == 'Brasil 2':
+                importe1 = (int(precio[5]) + (int(precio[5]) * 25) / 100)
+            else:
+                if pais_destino1 == 'Brasil 3':
+                    importe1 = (int(precio[5]) + (int(precio[5]) * 30) / 100)
+                else:
+                    if pais_destino1 == 'Otro':
+                        importe1 = (int(precio[5]) + (int(precio[5]) * 50) / 100)
+    if tipo == 6:
+        tipo_envio = 'Carta expresa'
+        peso = (peso[6])
+        if (pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)" or
+                pais_destino1 == 'Brasil 1'):
+            importe1 = (int(precio[6]) + (int(precio[6]) * 20) / 100)
+        else:
+            if pais_destino1 == 'Chile' or pais_destino1 == 'Uruguay(No Montevideo)' or pais_destino1 == 'Brasil 2':
+                importe1 = (int(precio[6]) + (int(precio[6]) * 25) / 100)
+            else:
+                if pais_destino1 == 'Brasil 3':
+                    importe1 = (int(precio[6]) + (int(precio[6]) * 30) / 100)
+                else:
+                    if pais_destino1 == 'Otro':
+                        importe1 = (int(precio[6]) + (int(precio[6]) * 50) / 100)
+
+importe1 = int(importe1)
+
+# CARGA DE DATOS DE FORMA DE PAGO
+importe_total = 0
+forma_pago = input('¿que forma de pago desea utilizar? (1:efectivo, 2:tarjeta de credito) :')
+
+# PROCESOS PARA IDENTIFICAR LA FORMA DE PAGO
+if forma_pago == "1":
+    importe_total = int(importe1 - (importe1 * 10 / 100))
+elif forma_pago != "1" and forma_pago == "2":
+    importe_total = int(importe1)
+
+# MUESTRA DE RESULTADOS
+print('pais de destino:', cp)
+print('provincia:', provincia)
+print('importe inicial a pagar:', importe1)
+print('importe total a pagar:', importe_total)
