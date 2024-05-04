@@ -178,7 +178,7 @@ if cp == 'Argentina':
         tipo_envio = 'Carta simple'
         peso = (peso[1])
         importe1 = (precio[1])
-    if tipo == 3:
+    if tipo == 2:
         tipo_envio = 'Carta simple'
         peso = (peso[2])
         importe1 = (precio[2])
@@ -239,7 +239,7 @@ else:
                         else:
                             if pais_destino1 == 'otro':
                                 importe1 = (int(precio[1]) + (int(precio[1]) * 50) / 100)
-    if tipo == 3:
+    if tipo == 2:
         tipo_envio = 'Carta simple'
         peso = (peso[2])
         if pais_destino1 == 'Bolivia' or pais_destino1 == 'Paraguay' or pais_destino1 == "Uruguay(Montevideo)":
@@ -340,15 +340,16 @@ else:
                             if pais_destino1 == 'otro':
                                 importe1 = (int(precio[6]) + (int(precio[6]) * 50) / 100)
 
+importe1 = int(importe1)
+
 #Datos de forma de pago:
 importe_total = 0
 forma_pago = input('¿que forma de pago desea utilizar? (1:efectivo, 2:tarjeta de credito) :')
 if forma_pago == "1":
-    importe_total = importe1 - (importe1 * 10 / 100)
-if forma_pago != "1" and forma_pago == "2":
-        importe_total = importe1
-if forma_pago != "1" and forma_pago != "2":
-    importe_total = 'error en el pago'
+    importe_total = int(importe1 - (importe1 * 10 / 100))
+elif forma_pago != "1" and forma_pago == "2":
+    importe_total = int(importe1)
+
 
 print('pais de destino:',cp)
 print('provincia:',provincia)
