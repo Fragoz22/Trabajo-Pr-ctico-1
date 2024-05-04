@@ -19,7 +19,7 @@ if len(cp) > 9 or len(cp) < 4:
     if ban == False:
         cp = "otro"
         provincia = "No Aplica"
-        pais_destino1 = 'otro'
+        pais_destino1 = "otro"
 
 else:
 
@@ -73,7 +73,7 @@ else:
                 else:
                     if len(cp) == 9:
                         if (cp[0] in reales and cp[1] in reales and cp[2] in reales and cp[3] in reales and cp[4] in
-                                reales and cp[5] in reales and cp[6] in reales and cp[7] in reales and cp[8] in reales):
+                                reales and cp[5] == "-" and cp[6] in reales and cp[7] in reales and cp[8] in reales):
 
                             if cp[0] == "8" or cp[0] == "9":
                                 cp = "Brasil"
@@ -158,14 +158,15 @@ else:
                         else:
                             provincia = "No aplica"
 
-#CARGA DE DATOS DE DIRECCION Y ENVIO
+# CARGA DE DATOS DE DIRECCION Y ENVIO
 direccion = input("Dirección del lugar de destino: ")
-#ASIGNACION DE TUPLAS/VARIABLES
+# ASIGNACION DE TUPLAS/VARIABLES
 tipo = int(input("Tipo de envío: "))
 tipo_envio = ('Carta Simple', 'Carta Certificada', 'Carta Expresa')
 peso = ('p < 20', '20 <= p < 150 ', '150 <= p < 500', 'p < 150', '150 <= p < 500', 'p < 150', '150 <= p < 500')
 precio = (1100, 1800, 2450, 8300, 10900, 14300, 17900)
-pais_destino = ('Bolivia', 'Paraguay', 'Uruguay (Montevideo)', 'Chile', 'Uruguay (no Montevideo)', 'a', 'b','c', 'Otro')
+pais_destino = ('Bolivia', 'Paraguay', 'Uruguay (Montevideo)', 'Chile', 'Uruguay (no Montevideo)', 'a', 'b', 'c',
+                'Otro')
 importe1 = 0
 importe = 0
 
@@ -174,27 +175,27 @@ if cp == 'Argentina':
         tipo_envio = 'Carta simple'
         peso = (peso[0])
         importe1 = (precio[0])
-    if tipo == 1:
+    elif tipo == 1:
         tipo_envio = 'Carta simple'
         peso = (peso[1])
         importe1 = (precio[1])
-    if tipo == 2:
+    elif tipo == 2:
         tipo_envio = 'Carta simple'
         peso = (peso[2])
         importe1 = (precio[2])
-    if tipo == 3:
+    elif tipo == 3:
         tipo_envio = 'Carta certificada'
         peso = (peso[3])
         importe1 = (precio[3])
-    if tipo == 4:
+    elif tipo == 4:
         tipo_envio = 'Carta certificada'
         peso = (peso[4])
         importe1 = (precio[4])
-    if tipo == 5:
+    elif tipo == 5:
         tipo_envio = 'Carta Expresa'
         peso = (peso[5])
         importe1 = (precio[5])
-    if tipo == 6:
+    elif tipo == 6:
         tipo_envio = 'Carta Expresa'
         peso = (peso[6])
         importe1 = (precio[6])
@@ -342,7 +343,7 @@ else:
 
 importe1 = int(importe1)
 
-#Datos de forma de pago:
+# Datos de forma de pago:
 importe_total = 0
 forma_pago = input('¿que forma de pago desea utilizar? (1:efectivo, 2:tarjeta de credito) :')
 if forma_pago == "1":
@@ -351,7 +352,7 @@ elif forma_pago != "1" and forma_pago == "2":
     importe_total = int(importe1)
 
 
-print('pais de destino:',cp)
-print('provincia:',provincia)
-print('importe inicial a pagar:',importe1)
-print('importe total a pagar:',importe_total)
+print('pais de destino:', cp)
+print('provincia:', provincia)
+print('importe inicial a pagar:', importe1)
+print('importe total a pagar:', importe_total)
